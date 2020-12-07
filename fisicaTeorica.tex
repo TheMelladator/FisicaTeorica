@@ -1,0 +1,79 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{afterpage}
+\usepackage{bbm}
+\author{Por: Luis Fernando Mellado Cañas\\David Guadalupe Esquila}
+\title{Conceptos de Fisísca Teórica}
+\date{}
+\begin{document}
+\maketitle
+\newpage
+\begin{abstract}
+Este documento es una recopilacion de los apuntes del profesor Phd Jose Luis Castro Quilantan de la materia Fisíca Teórica 1 de la Escuela Superior de Fisíca y Matemáticas dedicado a los alumnos de dicha materia, esperando ser de gran utilidad, como me fue de utilidad a mi.
+\begin{flushright}
+Luis Fernando Mellado Cañas
+\end{flushright}
+\end{abstract}
+\afterpage{\thispagestyle{empty}\null\newpage}
+\newpage
+\tableofcontents
+\newpage
+\section{Prefacio}
+En este escrito se hablara de la resolución de varios fenemos fisicos mecanicos con algunas tecnicas basadas en el algebra lineal, se espera que el alumno que desse leer este escrito, debera de tener conceptos fuertes sobre algebra lineal y metodos de resolucion de ecuaciones diferenciales para poder entender los pasos esenciales de estas tecnicas, ademas, claro esta, las ideas fundamentales de fisíca.
+\newpage
+\section{Problema de los dos cuerpos}
+Empesemos con el fenomeno más basico y sencillo de fisica, una masa que cuelga sugeta por un resorte con coeficiente de restitución k y longitud l.\\
+Veamos cual es la energía potencial del sistema, tenemos que se ve afectado por el potencial gravitarorio de la Tierra y ademas el potencial del resorte.\\
+Luego de la condición de fuerzas conservativas tenemos que:
+$$\mathbb{F}(y)=-\nabla U(y)$$
+entonces si $U=\frac{1}{2}k(y-l)^2-mgy$
+\begin{eqnarray}
+\mathbb{F}&=&-\frac{\partial}{\partial y}\left(\frac{1}{2}k(y-l)^2-mgy\right)\nonumber\label{fuerzaResorte}\\
+&=&-k(y-l)+mg
+\end{eqnarray}
+De aqui podemos observar algo importante, vemos que las condiciones donde $\mathbb{F}$ es igual a cero, se le denominan puntos de equilibrio; es decir,
+\begin{eqnarray}
+0&=&-ky_{eq}+kl+mg\nonumber\\
+y_{eq}&=&\frac{mg}{k}+l\label{puntoEquilibrio}
+\end{eqnarray}
+Ahora de la segunda ley de Newton tenemos que la equación \ref{fuerzaResorte}, obtenemos la ecuación de movimiento.
+\begin{eqnarray}
+m\ddot y&=&-ky+kl+mg\nonumber\\
+\ddot y +\frac{k}{m}y&=&g+\frac{kl}{m}\label{edoResorteVer}
+\end{eqnarray}
+Observe que tenemos una ecuación diferencial ordinaria de segundo orden no homogenea, la parte homogenea es la ecuación de un oscilador armonico simple, por lo tanto la solucion a este sistema es el siguiente:
+\footnote{¿Quién es $A$, $B$ y $\omega$?}$$y(t)=A\cos(\omega\cdot t)+B\sin(\omega\cdot t)-\frac{gm}{k}-l$$
+Si somos curiosos, observe que el ultimo termino de la ecuacion del sistema es igual a la condicion de equilibrio (observe \ref{puntoEquilibrio}) por tanto en \ref{edoResorteVer} haciendo un cambio de variable a $y-y_{eq}=Z$\label{cambioVariable} tenemos:
+$$\ddot{Z}+\frac{k}{m}Z=0$$
+logrando asi homogenizar la ecuación de movimiento \ref{edoResorteVer}, sin alterar las propiedades pricipales de este.
+\\
+Bien, veamos ahora extengamos este concepto, ahora en la masa le colocamos otro resorte con coeficiente de restitucion $k_2$, longitud $l_2$ colgando otra masa (supongamos que las masas son diferentes $m_1\neq m_2$), empecemos con el potencial
+$$U(y_1,y_2)=\frac{1}{2}k_1(y_1-l_1)^2+\frac{1}{2}k_2(y_2-y_1-l_2)^2-mgy_1-mgy_2$$\footnote{¿Qué quiere decir $U(y_1,y_2)$,$y_1-l_1$ $y_2-y_1-l_2$?}
+luego aplicando que las fuerzas son conservativas
+\begin{eqnarray*}
+\mathbb{F}(y_1,y_2)&=&-\nabla U(y_1,y_2)\nonumber\\
+&=&-\frac{\partial}{\partial y_1}\left(\frac{1}{2}k_1y_1^2+\frac{1}{2}k_2(y_2-y_1)^2-mgy_1-mgy_2\right)\hat y_1\\
+&&-\frac{\partial}{\partial y_2}\left(\frac{1}{2}k_1y_1^2+\frac{1}{2}k_2(y_2-y_1)^2-mgy_1-mgy_2\right)\hat y_2\nonumber\\
+&=&(-k_1y_1+k_2(y_2-y_1)+mg)\hat{y_1}+(-k_2(y_2-y_1)+mg)\hat{y_2}
+\end{eqnarray*}
+Notese que ahora la fuerza se esta escribiendo como un campo vectorial en terminos de$y_1$ y $y_2$.
+Bien, para simplificar la notacion, podemos usar el poder del algebra matricial, de aquí se requiere conocimiento de algebra lineal.\\
+Cambiando a la notacion matricial, tenemos:
+$$
+\left(
+\begin{array}{c}
+F_{y_1}\\
+F_{y_2}
+\end{array}
+\right)
+=
+\left(
+\begin{array}{c}
+
+\end{array}
+\right)
+$$
+\end{document}
